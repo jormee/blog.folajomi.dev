@@ -34,7 +34,7 @@ const Blog = ({ data }) => {
           {
             data.allContentfulBlogPost.edges.map(({ node }) => 
               <li className="post">
-                <p>{node.title}</p>
+                <Link to={`/posts/${node.slug}`}>{node.title}</Link>
               </li>)
           }
         </ul>
