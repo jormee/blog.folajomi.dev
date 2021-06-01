@@ -3,6 +3,11 @@ require("dotenv").config({
 })
 
 module.exports = {
+
+  flags: {
+    THE_FLAG: false
+  },
+  
   siteMetadata: {
     title: `Fola's Blog`,
     description: `This is a space where I document my Web Dev learning journey and talk about things I found amusing in the tech space`,

@@ -1,36 +1,32 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 export const blogPosts = graphql`
-  query {
-    allContentfulBlogPost (
-      sort: {
-        fields:published,
-        order:DESC
-      }) {
-        edges {
-          node {
-            contentful_id
-            title
-            slug
-            published(fromNow: true)
-            excerpt
-          }
+  query tagsQuery($tag: String){
+    allContentfulBlogPost(filter: {tags: {in: [$tag]}}) {
+      edges {
+        node {
+          contentful_id
+          slug
+          title
+          published(formatString: "Do MMM, YYYY")
+          tags
+          excerpt
         }
       }
+    }
   }
 `
 
-const Blog = ({ data }) => {
+// Render blog posts under the specified $tag
+const TaggedPosts = ({ pageContext, data }) => {
   return (
     <Layout>
-      <Seo title="Home" />
-      <h1>Folajomi's Web Dev Blog</h1>
-      <p>Welcome to your new Gatsby site.</p>
+      <Seo title={`${pageContext.tag} posts`} />
+      <h1>{`Articles on ${pageContext.tag}`}</h1>
       <div className="blogposts">
         <ul className="posts">
           {
@@ -39,8 +35,7 @@ const Blog = ({ data }) => {
                 <Link to={`/posts/${node.slug}`}><h3>{node.title}</h3></Link>
                 <p className="excerpt">{node.excerpt}</p>
                 <span className="published">{node.published}</span>
-              </li>
-            )
+              </li>)
           }
         </ul>
       </div>
@@ -48,4 +43,4 @@ const Blog = ({ data }) => {
   )
 }
 
-export default Blog
+export default TaggedPosts
