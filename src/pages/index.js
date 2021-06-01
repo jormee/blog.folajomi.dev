@@ -14,9 +14,11 @@ export const blogPosts = graphql`
       }) {
         edges {
           node {
+            contentful_id
             title
             slug
-            published
+            published(fromNow: true)
+            excerpt
           }
         }
       }
@@ -33,8 +35,10 @@ const Blog = ({ data }) => {
         <ul classname="posts">
           {
             data.allContentfulBlogPost.edges.map(({ node }) => 
-              <li className="post">
-                <Link to={`/posts/${node.slug}`}>{node.title}</Link>
+              <li className="post" key={node.contentful_id}>
+                <Link to={`/posts/${node.slug}`}><h3>{node.title}</h3></Link>
+                <p className="excerpt">{node.excerpt}</p>
+                <span className="published">{node.published}</span>
               </li>)
           }
         </ul>
