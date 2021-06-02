@@ -64,10 +64,10 @@ const Layout = ({ children }) => {
             </p>
 
             <div className="contacts">
-              <a href={socials.website} className="contact"><Portfolio /></a>
-              <a href={socials.github} className="contact"><Github /></a>
-              <a href={socials.twitter} className="contact"><Twitter /></a>
-              <a href={socials.linkedin} className="contact"><LinkedIn /></a>
+              <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
+              <a href={socials.github} className="contact" aria-label="github-icon"><Github /></a>
+              <a href={socials.twitter} className="contact" aria-label="twitter-icon"><Twitter /></a>
+              <a href={socials.linkedin} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
             </div>
 
             <div className="filters">
