@@ -38,7 +38,7 @@ const Blog = ({ data }) => {
               <li className="post" key={node.contentful_id}>
                 <Link to={`/posts/${node.slug}`}><h3>{node.title}</h3></Link>
                 <p className="excerpt">{node.excerpt}</p>
-                <span className="published">{node.published}</span>
+                <p className="published">{node.published}</p>
               </li>
             )
           }

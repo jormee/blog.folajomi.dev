@@ -1,0 +1,24 @@
+.light {
+  background-color: whitesmoke;
+  color: #333;
+
+  .foreground {
+    background-color: #9bd3cb;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}

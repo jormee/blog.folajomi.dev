@@ -6,50 +6,93 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+
+import "../styles/config.scss"
+import "../styles/layout.scss"
+
+import avatar from "../images/emblem.png"
+import Portfolio from "../icons/portfolio.svg"
+import Github from "../icons/github.svg"
+import LinkedIn from "../icons/linkedin.svg"
+import Twitter from "../icons/twitter-alt.svg"
 
 const Layout = ({ children }) => {
+  // Query for site information and blog tags
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           title
+          author
+          socials {
+            twitter
+            github
+            linkedIn
+            website
+          }
+        }
+      }
+
+      allContentfulBlogPost {
+        edges {
+          node {
+            tags
+          }
         }
       }
     }
   `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+  // extract a unique list of all tags from contentful posts
+  const tags = Array.from(new Set(data.allContentfulBlogPost.edges.map(({ node }) => node.tags).flat().sort()))
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  const { title, author, socials } = data.site.siteMetadata
+
+  return (
+    <div className="layout">
+      <div className="content">
+        <div className="sidebar">
+          <div className="container flex">
+            <Header siteTitle={title} />
+            <img src={avatar} alt="Folajomi's Avatar" />
+
+            <p className="about">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere suscipit dui, eu luctus justo consectetur sed. Fusce in est pharetra, elementum augue eu, cursus ex. In quis sem ipsum. Integer a aliquet nibh. Maecenas elementum, nibh non iaculis porttitor, eros massa bibendum dolor, sit amet cursus augue eros interdum nisi.
+            </p>
+
+            <div className="contacts">
+              <a href={socials.website} className="contact"><Portfolio /></a>
+              <a href={socials.github} className="contact"><Github /></a>
+              <a href={socials.twitter} className="contact"><Twitter /></a>
+              <a href={socials.linkedin} className="contact"><LinkedIn /></a>
+            </div>
+
+            <div className="filters">
+            
+              <ul className="tags">
+                {
+                  tags.map(tag => <li className="tag" key={tag}><Link to={`/tags/${tag}`}>{`#${tag}`}</Link></li>)
+                }
+              </ul>
+
+            </div>
+
+            <footer>
+              © {new Date().getFullYear()}. Built with ❤, ☕ and {` `}
+              <a href="https://gatsbyjs.org" target="_blank" rel="noreferrer noopener">Gatsby</a> {` `}by {` `}
+              <a href={socials.twitter}>{author}</a>
+            </footer>
+          </div>
+        </div>
+          <main>
+            <div className="container">{children}</div>
+          </main>
+      </div>
+    </div>
+  )
 }
 
 export default Layout
