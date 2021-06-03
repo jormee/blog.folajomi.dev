@@ -29,7 +29,9 @@ const Blog = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <h1>Folajomi's Web Dev Blog</h1>
-      <p>Welcome to your new Gatsby site.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere suscipit dui, eu luctus justo consectetur sed. Fusce in est pharetra, elementum augue eu, cursus ex. In quis sem ipsum. Integer a aliquet nibh. Maecenas elementum, nibh non iaculis porttitor, eros massa bibendum dolor, sit amet   cursus augue eros interdum nisi.
+      </p>
       <div className="blogposts">
         <ul className="posts">
           {
