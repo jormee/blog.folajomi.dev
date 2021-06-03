@@ -11,6 +11,10 @@ fairyGateTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     color: 'unset',
     textShadow: 'none',
     backgroundImage: 'none'
+  },
+
+  'blockquote': {
+    borderLeft: '3px solid gray'
   }
 })
 

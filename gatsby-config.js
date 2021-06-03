@@ -59,7 +59,26 @@ module.exports = {
       options: {
         footnotes: true,
         gfm: true,
-        plugins: []
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              // inserts 'language' before the class name for the pre tag
+              classPrefix: `language-`,
+              inlineCodeMarker: null,
+              aliases: {},
+              // show line numbers in the code snippets
+              showLineNumbers: true,
+              // customise shell prompt
+              prompt: {
+                user: 'root',
+                host: 'localhost',
+                global: false
+              },
+              escapeEntities: {},
+            }
+          }
+        ]
       }
     },
 

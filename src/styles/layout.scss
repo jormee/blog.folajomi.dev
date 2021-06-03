@@ -1,13 +1,17 @@
 .layout {
-  width: 100vw;
   min-height: 100vh;
+
+  a {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: normal;
+  }
 
   .content {
     position: relative;
-    width: 100%;
 
     .sidebar {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
@@ -56,6 +60,13 @@
           }
         }
 
+        footer {
+          a {
+            font-size: 1.1em;
+            font-style: italic;
+            font-weight: bold;
+          }
+        }
       }
 
       .closed {
@@ -80,7 +91,6 @@
       }
 
       main {
-        width: 70%;
         margin-left: 30%;
       }
     }

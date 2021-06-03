@@ -2,4 +2,29 @@
   margin-top: 1rem;
   text-align: justify;
   font-size: 1.2rem;
+
+  img {
+    border: 2px solid black;
+    margin: auto;
+  }
+
+  .gatsby-highlight {
+    background-color: #e3eaf2;
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+  }
+    
+  .gatsby-highlight pre[class*="language-"].line-numbers {
+    padding: 0;
+    padding-left: 2.8em;
+    overflow: initial;
+  }
+
+  a {
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: bold;
+  }
 }
