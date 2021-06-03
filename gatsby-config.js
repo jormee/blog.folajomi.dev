@@ -111,10 +111,8 @@ module.exports = {
             }
 
             allSitePage {
-              edges {
-                node {
-                  path
-                }
+              nodes {
+                path
               }
             }
           }
