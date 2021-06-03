@@ -18,7 +18,6 @@ export const blogPosts = graphql`
             title
             slug
             published(fromNow: true)
-            excerpt
           }
         }
       }
@@ -37,7 +36,6 @@ const Blog = ({ data }) => {
             data.allContentfulBlogPost.edges.map(({ node }) => 
               <li className="post" key={node.contentful_id}>
                 <Link to={`/posts/${node.slug}`}><h3>{node.title}</h3></Link>
-                <p className="excerpt">{node.excerpt}</p>
                 <p className="published">{node.published}</p>
               </li>
             )

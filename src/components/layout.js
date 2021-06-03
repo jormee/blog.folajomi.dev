@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
               <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
               <a href={socials.github} className="contact" aria-label="github-icon"><Github /></a>
               <a href={socials.twitter} className="contact" aria-label="twitter-icon"><Twitter /></a>
-              <a href={socials.linkedin} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
+              <a href={socials.linkedIn} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
             </div>
 
             <div className="filters">
