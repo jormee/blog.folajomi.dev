@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const siteUrl = process.env.URL || `https://blog-folajomi-dev.vercel.app/`
+const siteUrl = process.env.URL || `https://blog-folajomi-dev.vercel.app`
 
 module.exports = {
 

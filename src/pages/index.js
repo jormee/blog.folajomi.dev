@@ -12,15 +12,15 @@ export const blogPosts = graphql`
         fields:published,
         order:DESC
       }) {
-        edges {
-          node {
-            contentful_id
-            title
-            slug
-            published(fromNow: true)
-          }
+      edges {
+        node {
+          contentful_id
+          title
+          slug
+          published(fromNow: true)
         }
       }
+    }
   }
 `
 
