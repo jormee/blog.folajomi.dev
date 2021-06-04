@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const siteURL = process.env.URL || `https://blog-folajomi-dev.vercel.app/`
+const siteUrl = process.env.URL || `https://blog-folajomi-dev.vercel.app/`
 
 module.exports = {
 
@@ -10,7 +10,7 @@ module.exports = {
     title: `Fola's Blog`,
     description: `This is a space where I document my Web Dev learning journey and talk about things I found amusing in the tech space`,
     author: `Folajomi Shotunde`,
-    siteUrl: siteURL,
+    siteUrl,
     socials: {
       twitter: `https://twitter.com/folajomi__`,
       linkedIn: `https://linkedin.com/in/folajomi-shotunde`,
@@ -103,7 +103,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/sitemap`,
         query: `
           {
             site {
