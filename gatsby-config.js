@@ -103,7 +103,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: ["/tags/*"],
         query: `
           {
             site {
@@ -118,7 +117,8 @@ module.exports = {
               }
             }
           }
-        `
+        `,
+        excludes: ["/tags/*"]
       }
     },
     `gatsby-plugin-gatsby-cloud`,
