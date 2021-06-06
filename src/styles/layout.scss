@@ -64,7 +64,7 @@
 
         footer {
           text-align: center;
-          
+
           a {
             font-size: 1.1em;
             font-style: italic;
@@ -81,7 +81,7 @@
     main .theme-toggle {
       position: fixed;
       top: 2rem;
-      right: 2rem;
+      right: 0;
       background-color: transparent;
       border: none;
     }
@@ -105,7 +105,6 @@
 
       main {
         margin-left: 25%;
-        width: 50%;
       }
     }
   }  
