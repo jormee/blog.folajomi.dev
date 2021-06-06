@@ -16,6 +16,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
+      overflow-y: scroll;
       font-size: .8rem;
 
       .flex {
@@ -26,7 +27,7 @@
 
         img {
           width: 10rem;
-          margin: 1rem auto;
+          margin: 1rem auto 2rem;
           border-radius: 50%;
           border: thin solid black;
         }
@@ -37,7 +38,7 @@
 
         .contacts {
           display: flex;
-          gap: .5rem;
+          gap: 1rem;
           justify-content: center;
           align-items: baseline;
           margin-bottom: 1.5rem;
@@ -69,7 +70,7 @@
         }
       }
 
-      .closed {
+      &-closed {
         left: -100%;
       }
     }

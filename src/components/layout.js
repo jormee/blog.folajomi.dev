@@ -59,10 +59,6 @@ const Layout = ({ children }) => {
             <Header siteTitle={title} />
             <img src={avatar} alt="Folajomi's Avatar" />
 
-            <p className="about">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere suscipit dui, eu luctus justo consectetur sed. Fusce in est pharetra, elementum augue eu, cursus ex. In quis sem ipsum. Integer a aliquet nibh. Maecenas elementum, nibh non iaculis porttitor, eros massa bibendum dolor, sit amet cursus augue eros interdum nisi.
-            </p>
-
             <div className="contacts">
               <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
               <a href={socials.github} className="contact" aria-label="github-icon"><Github /></a>
@@ -70,8 +66,14 @@ const Layout = ({ children }) => {
               <a href={socials.linkedIn} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
             </div>
 
+            <p className="about">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere suscipit dui, eu luctus justo consectetur sed. Fusce in est pharetra, elementum augue eu, cursus ex. In quis sem ipsum. Integer a aliquet nibh. Maecenas elementum, nibh non iaculis porttitor, eros massa bibendum dolor, sit amet cursus augue eros interdum nisi.
+            </p>
+
             <div className="filters">
             
+              <h3>All Tags</h3>
+              
               <ul className="tags">
                 {
                   tags.map(tag => <li className="tag" key={tag}><Link to={`/tags/${tag}`}>{`#${tag}`}</Link></li>)
