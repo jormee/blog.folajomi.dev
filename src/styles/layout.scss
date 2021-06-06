@@ -1,5 +1,6 @@
 .layout {
   min-height: 100vh;
+  transition: all .6s ease;
 
   a {
     font-size: 1em;
@@ -29,7 +30,7 @@
           width: 10rem;
           margin: 1rem auto 2rem;
           border-radius: 50%;
-          border: thin solid black;
+          border: thin solid #222831;
         }
 
         .about {
@@ -55,13 +56,15 @@
 
             .tag {
               padding: .2rem;
-              background-color: black;
+              background-color: #2f5d62;
               color: #fefefe;
             }
           }
         }
 
         footer {
+          text-align: center;
+          
           a {
             font-size: 1.1em;
             font-style: italic;
@@ -73,6 +76,14 @@
       &-closed {
         left: -100%;
       }
+    }
+
+    main .theme-toggle {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background-color: transparent;
+      border: none;
     }
   }
 }

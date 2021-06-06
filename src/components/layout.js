@@ -9,10 +9,13 @@ import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
+import { ThemeContext } from '../contexts/themeContext'
 
 import "../styles/config.scss"
 import "../styles/layout.scss"
 
+import Moon from '../icons/crescent.svg'
+import Sun from '../icons/sun.svg'
 import avatar from "../images/emblem.png"
 import Portfolio from "../icons/portfolio.svg"
 import Github from "../icons/github.svg"
@@ -20,6 +23,7 @@ import LinkedIn from "../icons/linkedin.svg"
 import Twitter from "../icons/twitter-alt.svg"
 
 const Layout = ({ children }) => {
+
   // Query for site information and blog tags
   const data = useStaticQuery(graphql`
     query {
@@ -51,8 +55,11 @@ const Layout = ({ children }) => {
 
   const { title, author, socials } = data.site.siteMetadata
 
+  const { theme, themeToggle } = React.useContext(ThemeContext)
+
+
   return (
-    <div className="layout">
+    <div className={`layout ${theme}`}>
       <div className="content">
         <div className="sidebar">
           <div className="container flex">
@@ -90,6 +97,11 @@ const Layout = ({ children }) => {
           </div>
         </div>
           <main>
+            <button className="theme-toggle" onClick={() => themeToggle()}>
+              {
+                theme === 'light' ? <Moon /> : <Sun />
+              }
+            </button>
             <div className="container">{children}</div>
           </main>
       </div>

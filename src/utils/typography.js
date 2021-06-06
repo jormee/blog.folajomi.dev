@@ -4,7 +4,8 @@ import fairyGateTheme from 'typography-theme-fairy-gates'
 fairyGateTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   'h1, h2, h3': {
     marginTop: 'unset',
-    marginBottom: 'unset'
+    marginBottom: 'unset',
+    color: 'unset'
   },
 
   'a': {
@@ -14,7 +15,8 @@ fairyGateTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   },
 
   'blockquote': {
-    borderLeft: '3px solid gray'
+    borderLeft: '3px solid gray',
+    color: 'unset'
   }
 })
 

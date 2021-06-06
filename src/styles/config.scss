@@ -2,8 +2,19 @@
   background-color: whitesmoke;
   color: #333;
 
-  .foreground {
-    background-color: #9bd3cb;
+  blockquote {
+    color: #2f5d62;
+    border-color: #2f5d62;
+  }
+}
+
+.dark {
+  background-color: #222831;
+  color: #ddd;
+
+  blockquote {
+    color: #00D7B8;
+    border-color: #00D7B8;
   }
 }
 

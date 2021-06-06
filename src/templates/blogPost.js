@@ -28,7 +28,7 @@ export const query = graphql`
 
 const BlogPost = ({ data }) => {
   const { title, childContentfulBlogPostPostBodyTextNode, coverImg } = data.contentfulBlogPost
-  console.log(title)
+ 
   const { html } = childContentfulBlogPostPostBodyTextNode.childMarkdownRemark
   const cover = getImage(coverImg)
   return(
