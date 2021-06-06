@@ -7,6 +7,7 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Header from "./header"
 import { ThemeContext } from '../contexts/themeContext'
@@ -16,7 +17,6 @@ import "../styles/layout.scss"
 
 import Moon from '../icons/crescent.svg'
 import Sun from '../icons/sun.svg'
-import avatar from "../images/emblem.png"
 import Portfolio from "../icons/portfolio.svg"
 import Github from "../icons/github.svg"
 import LinkedIn from "../icons/linkedin.svg"
@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
         <div className="sidebar">
           <div className="container flex">
             <Header siteTitle={title} />
-            <img src={avatar} alt="Folajomi's Avatar" />
+            <StaticImage src='../images/emblem.png' alt="Folajomi's Avatar" />
 
             <div className="contacts">
               <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>

@@ -28,9 +28,7 @@
 
         img {
           width: 10rem;
-          margin: 1rem auto 2rem;
-          border-radius: 50%;
-          border: thin solid #222831;
+          margin: 0 auto 2rem;
         }
 
         .about {
@@ -84,6 +82,7 @@
       right: 0;
       background-color: transparent;
       border: none;
+      cursor: pointer;
     }
   }
 }
@@ -100,7 +99,6 @@
       .sidebar {
         width: 25%;
         max-width: 310px;
-        border-right: 2px solid #333;
       }
 
       main {
