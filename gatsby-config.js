@@ -62,6 +62,7 @@ module.exports = {
       options: {
         footnotes: true,
         gfm: true,
+        excerpt_separator: `<!-- end -->`,
         plugins: [
           {
             resolve: `gatsby-remark-prismjs`,

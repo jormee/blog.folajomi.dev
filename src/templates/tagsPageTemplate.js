@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import '../styles/index.scss'
+
 export const blogPosts = graphql`
   query tagsQuery($tag: String){
     allContentfulBlogPost(filter: {tags: {in: [$tag]}}) {
@@ -13,7 +15,12 @@ export const blogPosts = graphql`
           slug
           title
           published(formatString: "Do MMM, YYYY")
-          tags
+          childContentfulBlogPostPostBodyTextNode {
+            childMarkdownRemark {
+              excerpt
+              timeToRead
+            }
+          }
         }
       }
     }
@@ -22,19 +29,27 @@ export const blogPosts = graphql`
 
 // Render blog posts under the specified $tag
 const TaggedPosts = ({ pageContext, data }) => {
+  const { edges: posts } = data.allContentfulBlogPost
+  const noOfPosts = posts.length
   return (
     <Layout>
       <Seo title={`${pageContext.tag} posts`} />
-      <h1>{`Articles on ${pageContext.tag}`}</h1>
+      <h1>{`${noOfPosts} articles tagged '${pageContext.tag}'`}</h1>
       <div className="blogposts">
         <ul className="posts">
           {
-            data.allContentfulBlogPost.edges.map(({ node }) => 
-              <li className="post" key={node.contentful_id}>
-                <Link to={`/posts/${node.slug}`}><h3>{node.title}</h3></Link>
-                
-                <span className="published">{node.published}</span>
-              </li>)
+            posts.map(({ node }) => 
+            <li className="post" key={node.contentful_id}>
+              <Link to={`/posts/${node.slug}`}><h3 className="post-title">{node.title}</h3></Link>
+
+              <p className="post-details">
+                {`${node.published} • ${node.childContentfulBlogPostPostBodyTextNode.childMarkdownRemark.timeToRead}min read`}
+              </p>
+
+              <p className="excerpt">{node.childContentfulBlogPostPostBodyTextNode.childMarkdownRemark.excerpt}</p>
+              <hr />
+            </li>
+            )
           }
         </ul>
       </div>
