@@ -121,6 +121,59 @@ module.exports = {
         excludes: ["/tags/*"]
       }
     },
+
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: {site, allContentfulBlogPost}}) => {
+              return allContentfulBlogPost.edges.map(edge => {
+                return {
+                  title: edge.node.title,
+                  date: edge.node.published,
+                  url: `${site.siteMetadata.siteUrl}/posts/${edge.node.slug}`,
+                  custom_elements: [
+                    { 'content:encoded': edge.node.childContentfulBlogPostPostBodyTextNode.childMarkdownRemark.html }
+                  ]
+                }
+              })
+            },
+
+            query: `
+              {
+                allContentfulBlogPost {
+                  edges {
+                    node {
+                      title
+                      slug
+                      published
+                      childContentfulBlogPostPostBodyTextNode {
+                        childMarkdownRemark {
+                          html
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: `/rss.xml`,
+            title: `Feed from Fola's blog`
+          }
+        ]
+      }
+    },
+
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
