@@ -7,12 +7,11 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { StaticImage } from 'gatsby-plugin-image'
 
 import Header from "./header"
 import { ThemeContext } from '../contexts/themeContext'
 
-import "../styles/config.scss"
+import "../styles/_config.scss"
 import "../styles/layout.scss"
 
 import Moon from '../icons/crescent.svg'
@@ -63,18 +62,19 @@ const Layout = ({ children }) => {
       <div className="content">
         <div className="sidebar">
           <div className="container flex">
-            <Header siteTitle={title} />
-            <StaticImage src='../images/emblem.png' alt="Folajomi's Avatar" />
+            <div className="profile">
+              <Header siteTitle={title} />
 
-            <div className="contacts">
-              <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
-              <a href={socials.github} className="contact" aria-label="github-icon"><Github /></a>
-              <a href={socials.twitter} className="contact" aria-label="twitter-icon"><Twitter /></a>
-              <a href={socials.linkedIn} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
+              <div className="contacts">
+                <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
+                <a href={socials.github} className="contact" aria-label="github-icon"><Github /></a>
+                <a href={socials.twitter} className="contact" aria-label="twitter-icon"><Twitter /></a>
+                <a href={socials.linkedIn} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
+              </div>
             </div>
 
             <p className="about">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere suscipit dui, eu luctus justo consectetur sed. Fusce in est pharetra, elementum augue eu, cursus ex. In quis sem ipsum. Integer a aliquet nibh. Maecenas elementum, nibh non iaculis porttitor, eros massa bibendum dolor, sit amet cursus augue eros interdum nisi.
+              I'm Folajomi Shotunde from Lagos, Nigeria. Here, I document articles of web-dev concepts I learn from time to time. I ocassionally, save useful snippets in the snippets tab, for reference purposes. Check it out, you may find them useful.
             </p>
 
             <div className="filters">

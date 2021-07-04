@@ -4,7 +4,7 @@ import { GatsbyImage, getImage} from 'gatsby-plugin-image'
 
 import Layout from '../components/layout.js'
 
-import '../styles/config.scss'
+import '../styles/_config.scss'
 import '../styles/blogPost.scss'
 
 export const query = graphql`

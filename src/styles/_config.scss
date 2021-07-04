@@ -1,24 +1,40 @@
+$baseColor-light: #333;
+$highlightText-light: #2f5d62;
+$bgColor-light: whitesmoke;
+
+$baseColor-dark: #ddd;
+$highlightText-dark: #00D7B8;
+$bgColor-dark: #222831;
+
 * {
   scroll-behavior: smooth;
 }
 
 .light {
-  background-color: whitesmoke;
-  color: #333;
+  background-color: $bgColor-light;
+  color: $baseColor-light;
+
+  .highlight {
+    color: $highlightText-light
+  }
 
   blockquote, .ToC {
-    color: #2f5d62;
-    border-color: #2f5d62;
+    color: $highlightText-light;
+    border-color: $highlightText-light;
   }
 }
 
 .dark {
-  background-color: #222831;
-  color: #ddd;
+  background-color: $bgColor-dark;
+  color: $baseColor-dark;
+
+  .highlight {
+    color: $highlightText-dark;
+  }
 
   blockquote, .ToC {
-    color: #00D7B8;
-    border-color: #00D7B8;
+    color: $highlightText-dark;
+    border-color: $highlightText-dark;
   }
 }
 
