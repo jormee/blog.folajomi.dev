@@ -1,17 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import { ThemeContext } from '../contexts/themeContext'
 
-import "../styles/_config.scss"
 import "../styles/layout.scss"
 
 import Moon from '../icons/crescent.svg'
