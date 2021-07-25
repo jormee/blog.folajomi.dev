@@ -51,11 +51,11 @@ const Layout = ({ children }) => {
 
   return (
     <div className={`layout ${theme}`}>
+      <Header siteTitle={title} />
       <div className="content">
         <div className="sidebar">
           <div className="container flex">
             <div className="profile">
-              <Header siteTitle={title} />
 
               <div className="contacts">
                 <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
