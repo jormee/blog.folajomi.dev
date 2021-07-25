@@ -1,5 +1,8 @@
+@import 'config';
+
 .layout {
   min-height: 100vh;
+  transition: all .6s ease;
 
   a {
     font-size: 1em;
@@ -9,26 +12,38 @@
 
   .content {
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     .sidebar {
       position: fixed;
+      display: none;
       top: 0;
       left: 0;
+      z-index: 10;
       width: 100vw;
       height: 100vh;
+      overflow-y: scroll;
       font-size: .8rem;
+      background-color: $bgColor-dark;
 
       .flex {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding-top: 1rem;
         height: 100%;
 
-        img {
-          width: 10rem;
-          margin: 1rem auto;
-          border-radius: 50%;
-          border: thin solid black;
+        .profile {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 7rem;
+            margin: 0 auto 2rem;
+          }
         }
 
         .about {
@@ -38,9 +53,13 @@
         .contacts {
           display: flex;
           gap: .5rem;
-          justify-content: center;
           align-items: baseline;
           margin-bottom: 1.5rem;
+
+          svg {
+            width: 1rem;
+            fill: #00D7B8;
+          }
         }
 
         .filters {
@@ -54,13 +73,15 @@
 
             .tag {
               padding: .2rem;
-              background-color: black;
+              background-color: #2f5d62;
               color: #fefefe;
             }
           }
         }
 
         footer {
+          text-align: center;
+
           a {
             font-size: 1.1em;
             font-style: italic;
@@ -69,9 +90,18 @@
         }
       }
 
-      .closed {
+      &-closed {
         left: -100%;
       }
+    }
+
+    main .theme-toggle {
+      position: fixed;
+      top: 2rem;
+      right: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
     }
   }
 }
@@ -88,12 +118,13 @@
       .sidebar {
         width: 25%;
         max-width: 310px;
-        border-right: 2px solid #333;
+        background-color: unset;
+        display: initial;
       }
 
       main {
         margin-left: 25%;
-        width: 50%;
+        width: 70%;
       }
     }
   }  
