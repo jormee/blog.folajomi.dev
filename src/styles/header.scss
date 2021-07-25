@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  border-bottom: thin solid #333;
 
   .title {
     text-align: center;
@@ -40,11 +41,20 @@
 }
 
 @media screen and (min-width: 600px) {
-  .header {
-    .nav {
-      .nav-bar {
-        top: 0;
-        right: 5rem;
+  .nav {
+    justify-content: space-between;
+    align-items: baseline;
+    padding-right: 10rem;
+
+    .title {
+      text-align: left;
+    }
+    .nav-bar {
+      position: unset;
+      width: unset;
+
+      .nav-item {
+        font-size: 1rem;
       }
     }
   }
