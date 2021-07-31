@@ -42,7 +42,7 @@ const TaggedPosts = ({ pageContext, data }) => {
             <li className="post" key={node.contentful_id}>
               <Link to={`/posts/${node.slug}`}><h3 className="post-title">{node.title}</h3></Link>
 
-              <p className="post-details">
+              <p className="post-details highlight">
                 {`${node.published} • ${node.childContentfulBlogPostPostBodyTextNode.childMarkdownRemark.timeToRead}min read`}
               </p>
 
