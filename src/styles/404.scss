@@ -1,0 +1,10 @@
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .head {
+    font-family: cursive;
+    color: #00D7B8;
+  }
+}

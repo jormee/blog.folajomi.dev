@@ -1,9 +1,5 @@
-1. Add snippets tab.
+1. Work on snippets tab.
 
-3. SEO
-
-4. Add navigation (home, back, forward?)
-
-6. update old posts (add id tag to headers so ToC can function)
+6. update old posts (add id tag to headers so ToC can function, add descriptions to each post)
 
 7. Enable embedded sandbox

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage} from 'gatsby-plugin-image'
 
 import Layout from '../components/layout.js'
+import Seo from '../components/seo.js'
 
 import '../styles/_config.scss'
 import '../styles/blogPost.scss'
@@ -30,6 +31,8 @@ export const query = graphql`
   }
 `
 
+// Add descriptions to each blog post
+
 const BlogPost = ({ data }) => {
   const { title, childContentfulBlogPostPostBodyTextNode, coverImg, published } = data.contentfulBlogPost
  
@@ -37,6 +40,7 @@ const BlogPost = ({ data }) => {
   const cover = getImage(coverImg)
   return(
     <Layout>
+      <Seo title={title} />
       <article className="post">
         <h1 className="post-title">{title}</h1>
         <p className="post-details">

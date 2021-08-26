@@ -28,12 +28,13 @@ export const blogPosts = graphql`
 `
 
 // Render blog posts under the specified $tag
+
 const TaggedPosts = ({ pageContext, data }) => {
   const { edges: posts } = data.allContentfulBlogPost
   const noOfPosts = posts.length
   return (
     <Layout>
-      <Seo title={`${pageContext.tag} posts`} />
+      <Seo title={`${pageContext.tag} posts`} description={`A list of all posts relating to ${pageContext.tag} in this blog`} />
       <h1>{`${noOfPosts} articles tagged '${pageContext.tag}'`}</h1>
       <div className="blogposts">
         <ul className="posts">

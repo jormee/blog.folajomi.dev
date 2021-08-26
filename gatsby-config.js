@@ -8,7 +8,7 @@ module.exports = {
 
   siteMetadata: {
     title: `Fola's Blog`,
-    description: `This is a space where I document my Web Dev learning journey and talk about things I found amusing in the tech space`,
+    description: `This is a space where I document my web development learning journey and talk about things I found amusing in the tech space`,
     author: `Folajomi Shotunde`,
     siteUrl,
     socials: {
