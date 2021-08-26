@@ -36,7 +36,6 @@ const Blog = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <div className="home-page">
-        <h1 className="page-header">Folajomi's Web Dev Blog</h1>
         
         <div className="blog-posts">
           <ul className="posts">

@@ -12,69 +12,65 @@
 
   .content {
     position: relative;
+    top: 3rem;
     display: flex;
     flex-direction: column;
 
     .sidebar {
-      position: fixed;
       display: none;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      width: 100vw;
-      height: 100vh;
-      overflow-y: scroll;
-      font-size: .8rem;
-      background-color: $bgColor-dark;
+      visibility: hidden;
 
       .flex {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding-top: 1rem;
         height: 100%;
 
-        .profile {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-
-          img {
-            width: 7rem;
-            margin: 0 auto 2rem;
-          }
-        }
-
-        .about {
-          text-align: justify;
-        }
-
-        .contacts {
-          display: flex;
-          gap: .5rem;
-          align-items: baseline;
-          margin-bottom: 1.5rem;
-
-          svg {
-            width: 1rem;
-            fill: #00D7B8;
-          }
-        }
-
-        .filters {
+        .grow {
           flex-grow: 1;
-          gap: .5rem;
 
-          .tags {
+          .profile {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              margin: 0 auto 2rem;
+            }
+          }
+
+          .about {
+            text-align: justify;
+          }
+
+          .contacts {
+            display: flex;
+            gap: .5rem;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+
+            svg {
+              width: 1rem;
+              fill: #00D7B8;
+            }
+          }
+
+          .filters {
+            flex-grow: 1;
             gap: .5rem;
 
-            .tag {
-              padding: .2rem;
-              background-color: #2f5d62;
-              color: #fefefe;
+            .tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: .5rem;
+
+              .tag {
+                padding: .2rem;
+                background-color: #2f5d62;
+                color: #fefefe;
+              }
             }
           }
         }
@@ -89,16 +85,12 @@
           }
         }
       }
-
-      &-closed {
-        left: -100%;
-      }
     }
 
     main .theme-toggle {
       position: fixed;
-      top: 2rem;
-      right: 0;
+      top: 1rem;
+      right: 1rem;
       background-color: transparent;
       border: none;
       cursor: pointer;
@@ -110,16 +102,25 @@
   .layout {
 
     .content {
-      display: flex;
+      top: 0;
+      flex-direction: row;
+      align-items: flex-start;
       gap: 1rem;
-      min-height: 100%;
+      min-height: 100vh;
 
 
       .sidebar {
+        position: absolute;
+        left: 0;
         width: 25%;
         max-width: 310px;
+        min-height: 90vh;
         background-color: unset;
         display: initial;
+        visibility: visible;
+        z-index: 10;
+        overflow-y: scroll;
+        font-size: .8rem;
       }
 
       main {
