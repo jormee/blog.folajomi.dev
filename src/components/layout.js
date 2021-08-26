@@ -52,53 +52,57 @@ const Layout = ({ children }) => {
 
   return (
     <div className={`layout ${theme}`}>
-      <Header siteTitle={title} />
-      <div className="content">
-        <div className="sidebar">
-          <div className="container flex">
-            <div className="profile">
+      <div className="container">
+        <Header siteTitle={title} />
+        <div className="content">
+          <div className="sidebar">
+            <div className="container flex">
+              <div className="grow">
+                <div className="profile">
 
-              <StaticImage src="../images/emblem.png" alt="profile avatar" />
+                  <StaticImage src="../images/emblem.png" alt="profile avatar" />
 
-              <div className="contacts">
-                <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
-                <a href={socials.github} className="contact" aria-label="github-icon"><Github /></a>
-                <a href={socials.twitter} className="contact" aria-label="twitter-icon"><Twitter /></a>
-                <a href={socials.linkedIn} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
+                  <div className="contacts">
+                    <a href={socials.website} className="contact" aria-label="portfolio-icon"><Portfolio /></a>
+                    <a href={socials.github} className="contact" aria-label="github-icon"><Github /></a>
+                    <a href={socials.twitter} className="contact" aria-label="twitter-icon"><Twitter /></a>
+                    <a href={socials.linkedIn} className="contact" aria-label="linkedin-icon"><LinkedIn /></a>
+                  </div>
+                </div>
+
+                <p className="about">
+                  I'm Folajomi Shotunde from Lagos, Nigeria. Here, I document articles of web-dev concepts I learn from time to time. I ocassionally, save useful snippets in the snippets tab, for reference purposes. Check it out, you may find them useful.
+                </p>
+
+                <div className="filters">
+                
+                  <h3>All Tags</h3>
+                  
+                  <ul className="tags">
+                    {
+                      tags.map(tag => <li className="tag" key={tag}><Link to={`/tags/${tag}`}>{`#${tag}`}</Link></li>)
+                    }
+                  </ul>
+
+                </div>
               </div>
+
+              <footer>
+                © {new Date().getFullYear()}. Built with ❤, ☕ and {` `}
+                <a href="https://gatsbyjs.org" target="_blank" rel="noreferrer noopener">Gatsby</a> {` `}by {` `}
+                <a href={socials.twitter}>{author}</a>
+              </footer>
             </div>
-
-            <p className="about">
-              I'm Folajomi Shotunde from Lagos, Nigeria. Here, I document articles of web-dev concepts I learn from time to time. I ocassionally, save useful snippets in the snippets tab, for reference purposes. Check it out, you may find them useful.
-            </p>
-
-            <div className="filters">
-            
-              <h3>All Tags</h3>
-              
-              <ul className="tags">
-                {
-                  tags.map(tag => <li className="tag" key={tag}><Link to={`/tags/${tag}`}>{`#${tag}`}</Link></li>)
-                }
-              </ul>
-
-            </div>
-
-            <footer>
-              © {new Date().getFullYear()}. Built with ❤, ☕ and {` `}
-              <a href="https://gatsbyjs.org" target="_blank" rel="noreferrer noopener">Gatsby</a> {` `}by {` `}
-              <a href={socials.twitter}>{author}</a>
-            </footer>
           </div>
+            <main>
+              <button className="theme-toggle" onClick={() => themeToggle()}>
+                {
+                  theme === 'light' ? <Moon /> : <Sun />
+                }
+              </button>
+              <div className="container">{children}</div>
+            </main>
         </div>
-          <main>
-            <button className="theme-toggle" onClick={() => themeToggle()}>
-              {
-                theme === 'light' ? <Moon /> : <Sun />
-              }
-            </button>
-            <div className="container">{children}</div>
-          </main>
       </div>
     </div>
   )

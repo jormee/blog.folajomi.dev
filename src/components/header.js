@@ -6,7 +6,7 @@ import "../styles/header.scss"
 
 const Header = ({ siteTitle }) => (
   <header>
-    <nav className="container nav">
+    <nav className="nav">
       <h3 className="title"><Link to="/">{siteTitle}</Link></h3>
         <ul className="nav-bar">
           <li className="nav-item"><Link to="/" activeClassName="active">Blog</Link></li>
