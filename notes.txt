@@ -3,3 +3,9 @@
 6. update old posts (add id tag to headers so ToC can function, add descriptions to each post)
 
 7. Enable embedded sandbox
+
+8. Add comment support.
+
+9. Add posts from folasblog at Netlify
+
+10. Consider changing CMS. Markdown features not fully supported on contentful.
