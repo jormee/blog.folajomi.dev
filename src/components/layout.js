@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
         <Header siteTitle={title} />
         <div className="content">
           <div className="sidebar">
-            <div className="container flex">
+            <div className="flex">
               <div className="grow">
                 <div className="profile">
 

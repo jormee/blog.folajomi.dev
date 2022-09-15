@@ -2,4 +2,4 @@
 
 6. update old posts (add id tag to headers so ToC can function, add descriptions to each post)
 
-7. Enable embedded sandbox
+7. Enable embedded sandbox/codepen
